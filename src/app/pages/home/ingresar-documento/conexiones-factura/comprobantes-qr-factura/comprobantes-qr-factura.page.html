@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+
+<div>
+  <h4>Seleccione la Factura que desea descargar</h4>
+  <ion-item class="search_container" lines="none">
+    <ion-label>Seleccione un mes</ion-label>
+    <ion-select [(ngModel)]="mesSeleccionado">
+      <ion-select-option value="0">Todos</ion-select-option>
+      <ion-select-option value="01">Enero</ion-select-option>
+      <ion-select-option value="02">Febrero</ion-select-option>
+      <ion-select-option value="03">Marzo</ion-select-option>
+      <ion-select-option value="04">Abril</ion-select-option>
+      <ion-select-option value="05">Mayo</ion-select-option>
+      <ion-select-option value="06">Junio</ion-select-option>
+      <ion-select-option value="07">Julio</ion-select-option>
+      <ion-select-option value="08">Agosto</ion-select-option>
+      <ion-select-option value="09">Septiembre</ion-select-option>
+      <ion-select-option value="10">Octubre</ion-select-option>
+      <ion-select-option value="11">Noviembre</ion-select-option>
+      <ion-select-option value="12">Diciembre</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div class="conexion_titulo">
+    <h1>Conexión Nº: <b>{{conexion.NroConexion}}</b></h1>
+    <h5>Direccion:  <b>{{conexion.Direccion}}</b></h5>
+  </div>
+
+</div>
+
+<ion-content class="ion-padding">
+
+
+
+  <ion-list class="list" lines="none" *ngFor="let factura of facturasConLink">
+    <div class="factura_container"
+      *ngIf="(mesSeleccionado != '0' && factura.periodo.slice(5) == mesSeleccionado )||(mesSeleccionado == '0')">
+      <ion-card class="conexion_card">
+        <ion-item>
+          <ion-label>
+
+            <h3> Periodo: <b>{{ factura.periodo.replace('/', ' ') }}</b></h3>
+            <h3> Importe: $ <b>{{ factura.importeDeuda | number}}</b></h3>
+            <h3> Estado: <b [ngStyle]="{'color': factura.estado =='PAGADO'? 'green' : 'red'}">{{ factura.estado}}</b>
+            </h3>
+
+
+          </ion-label>
+        </ion-item>
+      </ion-card>
+
+  <div  class="btn_container" (click)="seleccionarFactura(factura)">
+
+              <h3 style="text-align: center;"><ion-icon style="zoom:2.0" class="icon" name="qr-code-outline" slot="start"></ion-icon><br>Descargar<br> Factura</h3>
+            </div>
+  </div>  </ion-list>
+  </ion-content>
+
