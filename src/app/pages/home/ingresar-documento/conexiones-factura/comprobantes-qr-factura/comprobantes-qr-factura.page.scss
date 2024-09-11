@@ -1,23 +1,23 @@
 h4 {
   text-align: center;
   color: #606062;
-  font-size: 50px;
+  font-size: 24px;
 
 }
 
 h3 {
 
-  font-size: 32px;
+  font-size: 20px;
 }
 
 h1 {
   color: #51a8b1;
-  font-size: 32px;
+  font-size: 20px;
 
 }
 
 h5 {
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .home_logo {
@@ -35,12 +35,12 @@ h5 {
   box-shadow: none !important;
   margin-left: 50px;
   width: 75%;
-  
+
 
 }
 
 .factura_container {
-  width:auto;
+  width: 50%;
   height: auto;
   display: flex;
   justify-content: center;
@@ -48,11 +48,14 @@ h5 {
   border-right: none;
   border-radius: 24px;
   margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
 
 }
 
 .btn_container {
-  width:25%;
+  width: 30%;
   height: auto;
   display: flex;
   align-items: center;
@@ -63,36 +66,40 @@ h5 {
   border: solid 3px #51a8b1;
 }
 
+.btn_container:hover {
+  background-color: #02565f;
+  border: solid 3px #02565f;
+}
+
 .list {
   background-color: transparent;
 }
 
 .search_container {
-  width: 70%;
-  min-height: 60px;
+  width: 40%;
+  min-height: 30px;
   height: auto;
   border: solid 2px #51a8b1;
   border-radius: 40px;
   margin-left: auto;
   margin-right: auto;
-  padding: 15px;
+
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 ion-label {
   background-color: transparent !important;
-  font-size: 30px !important;
+  font-size: 20px !important;
 }
 
 ion-select {
-  font-size: 30px !important;
+  font-size: 20px !important;
 }
 
-.conexion_titulo{
+.conexion_titulo {
   width: auto;
   height: auto;
   padding: 4px;
   margin-left: 4%;
 }
-
