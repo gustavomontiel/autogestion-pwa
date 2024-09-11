@@ -26,15 +26,16 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 .searchbar-input {
-  font-size: 40px !important;
+  font-size: 24px !important;
   border: none;
-
+  width: 40% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   border-radius: 40px !important;
   height: auto !important;
-  min-height: 80px !important;
+  min-height: 40px !important;
   border: solid 2px #51a8b1 !important;
-  margin-top: 30px !important;
-  margin-bottom: 30px !important;
+ 
 
 
 }
@@ -44,28 +45,28 @@
 
 }
 
-.alert-title.sc-ion-alert-md {
-  font-size: 45px;
-  text-align: center;
-}
+// .alert-title.sc-ion-alert-md {
+//   font-size: 45px;
+//   text-align: center;
+// }
 
-.alert-message.sc-ion-alert-md {
-  font-size: 35px;
-  text-align: center;
-}
+// .alert-message.sc-ion-alert-md {
+//   font-size: 35px;
+//   text-align: center;
+// }
 
-.alert.alert-wrapper {
-  --width: 1000px !important;
-  --heigth: 1900px !important;
+// .alert.alert-wrapper {
+//   --width: 1000px !important;
+//   --heigth: 1900px !important;
 
-}
+// }
 
-.alert-button.sc-ion-alert-md {
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
+// .alert-button.sc-ion-alert-md {
+//   font-size: 40px;
+//   font-weight: bold;
+//   text-align: center;
+//   margin-left: auto;
+//   margin-right: auto;
+//   margin-top: 50px;
 
-}
+// }

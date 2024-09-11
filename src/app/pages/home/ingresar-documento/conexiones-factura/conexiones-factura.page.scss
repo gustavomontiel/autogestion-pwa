@@ -1,16 +1,15 @@
 h4 {
   text-align: center;
   color: #606062;
-  font-size: 50px;
-  margin-top: 30px;
-}
-
-h3 {
   font-size: 30px;
 }
 
+h3 {
+  font-size: 20px;
+}
+
 h1 {
-  font-size: 40px;
+  font-size: 30px;
   color: #51a8b1;
 }
 
@@ -27,18 +26,14 @@ h5 {
 }
 
 .conexion_card {
-
-
-
   box-shadow: none !important;
   margin-left: 40px;
-
-
+  background-color: #51b159 !important;
 }
 
 .searchStyle {
   width: 80%;
-  height: 140px;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
 
@@ -46,7 +41,7 @@ h5 {
 
 .btn_facturas {
   width: auto;
-  height: 40px;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
 
@@ -60,20 +55,19 @@ h5 {
   display: flex;
   justify-content: center;
   margin-top: 10px;
-
-
-
 }
 
+
 .card_container {
-  width: 75%;
+  width: 40%;
+  height: auto;
   border-radius: 20px 0 0 20px;
   border: solid 2px #51a8b1;
 
 }
 
 .btn_container {
-  width: 25%;
+  width: 20%;
   height: auto;
   display: flex;
   align-items: center;
@@ -82,6 +76,12 @@ h5 {
   border-radius: 0 20px 20px 0;
   color: #ffffff;
 }
+
+.btn_container:hover {
+  background-color: #02565f;
+  border: solid 3px #02565f;
+}
+
 
 .my-custom-searchbar .searchbar-input-container .searchbar-input {
   height: 150px !important;

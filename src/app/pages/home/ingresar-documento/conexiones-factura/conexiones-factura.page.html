@@ -1,8 +1,8 @@
 <app-header></app-header>
 
-<div>
+<div class="searchStyle">
   <h4>Seleccione la conexión deseada:</h4>
-  <ion-searchbar placeholder="Buscar Conexión" type="number" slot="fixed" class="searchStyle"
+  <ion-searchbar placeholder="Buscar Conexión" type="number" slot="fixed" 
     (ionInput)="buscador($event.detail.value)"></ion-searchbar>
 
 </div>
@@ -20,7 +20,7 @@
             </h1>
 
             <h5>{{ conexion.Direccion }}</h5>
-            <br />
+         
             <ion-badge style="font-size: 30px;padding: 10px;" item-end *ngIf="+conexion.activo === 0">{{
               conexion.estadoConexion
               }}</ion-badge>
@@ -35,8 +35,8 @@
 
     </ion-list></div>
     <div class="btn_container" (click)="SeleccionarConexion(conexion)">
-      <h3 style="text-align: center;"><ion-icon name="qr-code-outline"
-        style="zoom: 2.0;"></ion-icon><br>Ver Facturas</h3>
+      <h3 style="text-align: center;"><ion-icon name="qr-code-outline" style="zoom: 2.0;">
+      </ion-icon><br>Ver Facturas</h3>
     </div>
   </div>
 </ion-content>
