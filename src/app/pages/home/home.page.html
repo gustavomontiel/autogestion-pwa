@@ -1,4 +1,3 @@
-
 <ion-content class="ion-padding">
   <div class="home_logo"><img src="/assets/imgs/logo.png"></div>
   <h1>Bienvenido a la <br> Autogestión</h1>
@@ -9,5 +8,10 @@
         name="qr-code-outline"></ion-icon><br>
       <p>Obtener factura</p>
     </button>
+    <button class="home_btn" style="background-color: #db5a34;"
+    (click)="setFlujoSeleccionado(opcionesFlujos.FLUJO_PAGOS)"><ion-icon style="zoom: 6.0;"
+      name="card-outline"></ion-icon><br>
+    <p>Pagar</p>
+  </button>
   </div>
 </ion-content>

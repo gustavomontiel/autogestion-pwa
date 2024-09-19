@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+
+  <h4>Seleccione la conexión que desea pagar</h4>
+  <div style="margin: 2%;"><ion-searchbar  placeholder="Buscar Conexión" type="number" slot="fixed" (ionInput)="buscador($event.detail.value)"></ion-searchbar></div>
+<ion-content class="ion-padding">
+
+  <div *ngIf="conexiones.length == 0">
+    
+       <h4><ion-icon name="checkmark-circle" color="tertiary"></ion-icon>
+     No tiene deudas pendientes</h4>
+    
+  </div>
+
+<div class="deuda_container" *ngFor="let conexion of conexionesFiltradas">
+  <div class="card_container">
+  <ion-list class="list" lines="none" >
+    <ion-card class="conexion_card" >
+      <ion-item>
+        <ion-label>
+          <h1>
+         Conexión Nº: <b>{{ conexion.NroConexion }}</b>
+          </h1>
+          <h3>{{ conexion.Direccion }}</h3>
+          <br />
+          <ion-badge style="font-size: 30px;padding: 10px;" item-end *ngIf="+conexion.activo === 0">{{
+            conexion.estadoConexion
+            }}</ion-badge>
+          <h2 class="fact-pendientes" *ngIf="+conexion.IdCategoria !== 8">
+            Facturas pendientes: <b>{{ conexion.CantFact }}</b><br>Total:
+            <b>$ {{ conexion.Importe | number }}</b>
+          </h2>
+          <br />
+
+
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+
+  </ion-list>
+</div>
+  <div  class="btn"
+            (click)="SeleccionarConexion(conexion)" *ngIf="+conexion.CantFact > 0 && +conexion.IdCategoria !== 8">
+           <br>
+            <h2 style="text-align: center;"> <ion-icon class="icon" name="card-outline" style="zoom: 2.0;" ></ion-icon><br>
+              {{ +conexion.corte != 0 ? 'Tramitar rehabilitación' : 'Pagar' }}
+            </h2>
+          </div>
+          <!-- <div  class="btn_libre"
+            *ngIf="+conexion.CantFact == 0">
+            <ion-icon name="checkmark-circle-outline" style="zoom: 4.0;"></ion-icon>
+            <h2>
+             Está al día
+            </h2>
+          </div> -->
+        
+        
+        
+        </div>
+</ion-content>

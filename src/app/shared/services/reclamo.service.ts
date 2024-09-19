@@ -11,42 +11,28 @@ export class ReclamoService {
 
   constructor(
     private http: HttpClient
-  ) {  }
+  ) { }
 
   getAsuntos() {
-    const headers = new HttpHeaders({
-      'X-Emsa-Api-Key': '123',
-    });
-
     const url = environment.publicApiRestUrl + 'reclamos/asuntos';
-    return this.http.get(url, { headers });
+    return this.http.get(url,);
   }
 
   getReclamosAbiertos(nroConexion: number, motivo: number) {
-    const headers = new HttpHeaders({
-      'X-Emsa-Api-Key': '123',
-    });
     const url = environment.publicApiRestUrl + 'reclamosAbiertos/' + nroConexion + '/' + motivo;
-    return this.http.get(url,{ headers });
+    return this.http.get(url,);
   }
-
 
   saveReclamo(reclamo: any) {
     const headers = new HttpHeaders({
-      'X-Emsa-Api-Key': '123',
     });
     const url = environment.publicApiRestUrl + 'reclamos';
-    return this.http.post(url,reclamo);
+    return this.http.post(url, { headers }, reclamo);
   }
 
   repeatReclamo(reiteracion: any) {
-    const headers = new HttpHeaders({
-      'X-Emsa-Api-Key': '123',
-    });
     const url = environment.publicApiRestUrl + 'reiteracionReclamo';
-    return this.http.post(url,{ headers }, reiteracion);
+    return this.http.post(url, reiteracion);
   }
-
-
 
 }

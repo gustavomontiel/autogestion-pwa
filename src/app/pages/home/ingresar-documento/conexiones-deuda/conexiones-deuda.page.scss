@@ -1,0 +1,79 @@
+h4 {
+  text-align: center;
+  color: #606062;
+  font-size: 40px;
+ 
+}
+
+h1 {
+  color: #db5a34;
+  font-size: 45px;
+
+}
+
+h2 {
+  font-size: 40px;
+}
+
+
+h3{
+  font-size: 30px;
+}
+
+
+.home_logo {
+  width: 120px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.conexion_card {
+  border-radius: 20px;
+  box-shadow: none !important;
+  margin-left: 40px;
+
+}
+
+.btn {
+  width:25%;
+  height:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#db5a34;;
+  border-radius: 0 20px 20px 0;
+  color: #ffffff;
+
+}
+
+.btn_libre {
+  width:25%;
+  height:auto;
+  display: flex;
+  align-items: center;
+  background-color:#5cfc99;
+  border-radius: 0 20px 20px 0;
+  margin-left: 5px;
+  padding-left: 24px;
+  color: #ffffff;}
+
+.deuda_container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.list{
+  background-color: transparent;
+}
+
+.card_container{
+  width: 75%;
+  border-radius: 20px 0 0 20px;
+  border: solid 2px  #db5a34 ;
+
+}

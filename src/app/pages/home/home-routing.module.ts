@@ -14,6 +14,10 @@ const routes: Routes = [
       import('./ingresar-documento/ingresar-documento.module').then(
         m => m.IngresarDocumentoPageModule
       )
+  },
+  {
+    path: 'pantalla-post-pago',
+    loadChildren: () => import('./pantalla-post-pago/pantalla-post-pago.module').then( m => m.PantallaPostPagoPageModule)
   }
 ];
 
