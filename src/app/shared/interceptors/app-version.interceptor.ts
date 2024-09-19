@@ -27,7 +27,7 @@ export class AppVersionInterceptor implements HttpInterceptor {
 
     request = request.clone({
       setHeaders: {
-        'X-Emsa-App-Origen': 'app',
+        'X-Emsa-App-Origen': 'pwa',
         'X-Emsa-App-Version': versionApp,
         'X-Emsa-Api-Key': '123'
       }
