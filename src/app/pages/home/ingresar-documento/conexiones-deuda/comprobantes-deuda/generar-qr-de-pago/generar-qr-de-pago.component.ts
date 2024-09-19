@@ -66,7 +66,7 @@ export class GenerarQrDePagoComponent implements OnInit {
           + 'producto=' + encodeURIComponent('Pago de facturas Energia de Misiones') + '&'
           + 'informacion=' + encodeURIComponent('')
 
-          window.open(url, '_blank');
+          window.open(url, '_self');
         /* const windowRef = this.inAppBrowser.create(url, '_self', this.options)
 
         windowRef.on('exit').subscribe(data => {

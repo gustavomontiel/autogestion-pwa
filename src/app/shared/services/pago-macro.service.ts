@@ -25,7 +25,7 @@ export class PagoMacroService {
       "Documento": pendAPagar[0].Documento,
       "Importe": this.importe,
       "Comprobantes": this.comprobantes,
-      "Origen": "app",
+      "Origen": "pwa",
       "Tipo": tipo,
       "DatosTipo": datosTipo,
       "MedioPago": "MACRO"
