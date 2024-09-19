@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OpcionesFlujos } from 'src/app/shared/const/rutas-opciones-flujo.const';
 
 @Component({
   selector: 'app-pantalla-post-pago',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PantallaPostPagoPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  goBack(){
+    this.router.navigate(['/home'])
   }
 
 }

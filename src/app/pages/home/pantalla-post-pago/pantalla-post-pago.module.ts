@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PantallaPostPagoPageRoutingModule } from './pantalla-post-pago-routing.module';
 
 import { PantallaPostPagoPage } from './pantalla-post-pago.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PantallaPostPagoPageRoutingModule
+    PantallaPostPagoPageRoutingModule,
+    SharedModule
   ],
   declarations: [PantallaPostPagoPage]
 })
