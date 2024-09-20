@@ -34,7 +34,6 @@ export class GenerarReclamoPage implements OnInit {
   direccionIncorrecta: boolean = false;
   direccionCorrecta: any = undefined;
   marker: any | undefined;
-  deshabilitado: boolean = true;
 
   @ViewChild('map')
   mapRef: ElementRef<HTMLElement> | undefined;
@@ -94,7 +93,6 @@ export class GenerarReclamoPage implements OnInit {
     })
     this.newMap.setOnMapClickListener((event) => {
       this.direccionCorrecta = "Latitud: " + event.latitude.toString() + " Longitud: " + event.longitude.toString()
-      this.esDeshabilitado();
       console.log(this.direccionCorrecta);
       this.añadirMarcador(event.latitude, event.longitude);
     });
@@ -226,16 +224,7 @@ export class GenerarReclamoPage implements OnInit {
     await alert.present();
   }
 
-  test() {
-    return !this.direccionCorrecta;
-  }
-
   seleccionadorDeAsunto(asunto: any) {
     this.asuntoSeleccionado = asunto
   }
-
-  esDeshabilitado(){
-    this.deshabilitado = false
-  }
-
 }
