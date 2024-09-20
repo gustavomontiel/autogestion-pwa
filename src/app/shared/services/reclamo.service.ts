@@ -24,10 +24,8 @@ export class ReclamoService {
   }
 
   saveReclamo(reclamo: any) {
-    const headers = new HttpHeaders({
-    });
     const url = environment.publicApiRestUrl + 'reclamos';
-    return this.http.post(url, { headers }, reclamo);
+    return this.http.post(url, reclamo);
   }
 
   repeatReclamo(reiteracion: any) {

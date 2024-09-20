@@ -23,13 +23,13 @@ const routes: Routes = [
         m => m.ConexionesFacturaPageModule
       )
   },
-  /* {
+  {
     path: RutasOpcionesFlujo.FLUJO_RECLAMOS,
     loadChildren: () =>
       import('./conexiones-reclamo/conexiones-reclamo.module').then(
         m => m.ConexionesReclamoPageModule
       )
-  } */
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,51 @@
+<app-header></app-header>
+<ion-content class="ion-padding">
+  <div *ngIf="!asuntoSeleccionado">
+
+
+    <div *ngFor="let asunto of asuntos">
+      <ion-button class="btn_reclamo" (click)="seleccionadorDeAsunto(asunto.idAsunto)" expand="block" shape="round">
+
+        <h4><b>{{asunto.Denominacion}}</b><br>
+          {{asunto.Descripcion}}</h4>
+      </ion-button>
+    </div>
+
+  </div>
+
+  <div *ngIf="asuntoSeleccionado && !direccionIncorrecta">
+    <ion-label>
+      <h1><b>Confirmación de Domicilio</b> </h1>
+    </ion-label>
+    <ion-label>
+      <h2>Por favor verifique si su domicilio es correcto </h2>
+    </ion-label>
+    <ion-card>
+      <h2 style="color: #f58634;"> Conexión:<b>{{perfil.NroConexion}}</b></h2><br>
+      <h2> {{perfil.Direccion}}</h2>
+    </ion-card>
+
+    <h1>¿Es correcto su Domicilio?</h1>
+    <div class="btn_cont">
+      <ion-button class="btn_domicilio" shape="round" color="secondary" (click)="enviarReclamo()">
+        Si
+      </ion-button>
+      <ion-button class="btn_domicilio" shape="round" color="tertiary" (click)="corregirDireccion()">
+        No
+      </ion-button>
+    </div>
+  </div>
+
+
+  <div *ngIf="direccionIncorrecta">
+    <h1><b>Ubique en el Mapa su Domicilio</b></h1>
+    <h2 style="text-align: center;">Arrastre el pin <ion-icon name="location" color="secondary"></ion-icon> de ubicación
+      en el mapa, hasta su domicilio y confírmelo</h2>
+      <capacitor-google-map  #map ></capacitor-google-map>
+
+
+    <ion-button class="btn_enviaReclamo" shape="round" color="tertiary" (click)="enviarReclamo()" id="enviar" >
+      Generar Reclamo
+    </ion-button>
+  </div>
+</ion-content>

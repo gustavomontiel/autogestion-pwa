@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<h1>Seleccione la conexión que desea reclamar</h1>
+
+<div><ion-searchbar placeholder="Buscar Conexión" type="number" slot="fixed"
+    (ionInput)="buscador($event.detail.value)"></ion-searchbar></div>
+<ion-content class="ion-padding">
+  <div class="factura_container" *ngFor="let conexion of conexionesFiltradas">
+    <div class="card_container">
+      <ion-card class="conexion_card">
+        <ion-item lines="none">
+          <ion-label>
+            <h2>
+              Conexión Nº: <b>{{ conexion.NroConexion }}</b>
+            </h2>
+            <h3>{{ conexion.Direccion }}</h3>
+            <ion-badge item-end *ngIf="+conexion.activo === 0">{{
+              conexion.estadoConexion
+              }}</ion-badge>
+            <h2 class="fact-pendientes" *ngIf="+conexion.IdCategoria !== 8"></h2>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </div>
+    <div class="btn_container" (click)="SeleccionarConexion(conexion)">
+
+      <h3><ion-icon class="icon" name="build-outline" slot="start"></ion-icon> <br>Generar<br> Reclamo</h3>
+    </div>
+  </div>
+</ion-content>

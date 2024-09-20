@@ -1,0 +1,52 @@
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #606062;
+}
+
+h2 {
+    font-size: 32px;
+    color:#f58634;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.btn_container {
+    width: 25%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f58634;
+    border-radius: 0 20px 20px 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.card_container {
+    width: 75%;
+    border-radius: 20px 0 0 20px;
+    border: solid 2px #f58634;
+
+}
+
+.factura_container {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 20px;
+
+}
+
+.conexion_card {
+    box-shadow: none !important;
+    margin-left: 40px;
+
+}
+.icon{
+    zoom:2.0;
+}
