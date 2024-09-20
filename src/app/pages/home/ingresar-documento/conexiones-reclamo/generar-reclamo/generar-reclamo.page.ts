@@ -123,14 +123,12 @@ export class GenerarReclamoPage implements OnInit {
 
         if (!this.reclamoAbierto) {
           let reclamoData = {
-            origen: 3,
-            documento: this.perfil.Documento,
-            nroCx: this.perfil.NroConexion,
+            origen: 33,
+            nroDocumento: this.perfil.Documento,
+            nroConexion: this.perfil.NroConexion,
             idAsunto: this.asuntoSeleccionado,
             direccion: this.perfil.Direccion,
-            telefono: "",
-            email: "",
-            observacion: this.direccionIncorrecta ? 'Direccion indicada por el usuario: ' + this.direccionCorrecta : 'Direccion confirmada por usuario',
+            observacionDomicilio: this.direccionIncorrecta ? 'Direccion indicada por el usuario: ' + this.direccionCorrecta : 'Direccion confirmada por usuario',
           };
 
           this.reclamosService.saveReclamo(reclamoData).subscribe({
