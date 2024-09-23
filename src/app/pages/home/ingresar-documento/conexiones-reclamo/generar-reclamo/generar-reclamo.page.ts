@@ -124,8 +124,8 @@ export class GenerarReclamoPage implements OnInit {
         if (!this.reclamoAbierto) {
           let reclamoData = {
             origen: 33,
-            nroDocumento: this.perfil.Documento,
-            nroConexion: this.perfil.NroConexion,
+            documento: this.perfil.Documento,
+            nroCx: this.perfil.NroConexion,
             idAsunto: this.asuntoSeleccionado,
             direccion: this.perfil.Direccion,
             observacionDomicilio: this.direccionIncorrecta ? 'Direccion indicada por el usuario: ' + this.direccionCorrecta : 'Direccion confirmada por usuario',
