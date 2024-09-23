@@ -35,7 +35,7 @@
   height: auto !important;
   min-height: 40px !important;
   border: solid 2px #51a8b1 !important;
- 
+
 
 
 }
@@ -70,3 +70,53 @@
 //   margin-top: 50px;
 
 // }
+@media(min-height:1919px) {
+  .searchbar-input {
+    font-size: 40px !important;
+    border: none;
+    width: 80% !important;
+    border-radius: 40px !important;
+    height: auto !important;
+    min-height: 80px !important;
+    border: solid 2px #51a8b1 !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+
+
+  }
+
+  .searchbar-search-icon {
+    color: transparent !important;
+
+  }
+
+  .alert-title.sc-ion-alert-md {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  .alert-message.sc-ion-alert-md {
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .alert.alert-wrapper {
+    --width: 1000px !important;
+    --heigth: 1900px !important;
+
+  }
+
+  .alert-button.sc-ion-alert-md {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+
+  }
+  ion-checkbox {
+    width: 160px;
+    height: 160px;
+  }
+}

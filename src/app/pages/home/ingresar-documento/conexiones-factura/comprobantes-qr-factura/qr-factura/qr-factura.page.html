@@ -6,10 +6,11 @@
   <h4> <b>Todo listo</b> <ion-icon name="checkmark-circle" color="tertiary"></ion-icon></h4>
   <h4>Escanee el código QR para obtener la factura</h4>
   <div class="qr_container">
-    <qrcode data="{{urlFactura}}" [allowEmptyString]="true" [elementType]="'img'" [errorCorrectionLevel]="'M'"
-      [cssClass]="'qrcode'" [colorDark]="'#000000'" [colorLight]="'#FFFFFF'" [margin]="1" [size]="6"
+    <qrcode  data="{{urlFactura}}" [allowEmptyString]="true" [elementType]="'img'" [errorCorrectionLevel]="'M'"
+      [cssClass]="'qrcode'" [colorDark]="'#000000'" [colorLight]="'#FFFFFF'" [margin]="1" [size]="14"
       [ariaLabel]="'Qr-Code Image'" [title]="'Qr-Code Image'" [alt]="'Qr-Code Image'"
-      [imageSrc]="'/assets/imgs/qr_logo.png'" [imageWidth]="60" [imageHeight]="50" />
+      [imageSrc]="'/assets/imgs/qr_logo.png'" [imageWidth]="80" [imageHeight]="70" />
   </div>
-</ion-content>
+
   <ion-button shape="round" class="btn_finalizar" color="tertiary" (click)="backHome()"><h3>FINALIZAR</h3 ></ion-button>
+</ion-content>

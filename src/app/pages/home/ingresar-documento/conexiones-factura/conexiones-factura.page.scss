@@ -104,3 +104,110 @@ h5 {
   margin-top: 30px;
 
 }
+
+@media (min-height:1919px){
+  h4 {
+    text-align: center;
+    color: #606062;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  
+  h3 {
+    font-size: 30px;
+  }
+  
+  h1 {
+    font-size: 40px;
+    color: #51a8b1;
+  }
+  
+  h5 {
+    font-size: 20px;
+  }
+  
+  .home_logo {
+    width: 120px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+  
+  .conexion_card {
+    box-shadow: none !important;
+    margin-left: 40px;
+    
+  
+  }
+  
+  .searchStyle {
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+  
+  .btn_facturas {
+    width: auto;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  
+  
+  
+  }
+  
+  .factura_container {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  
+  
+  
+  }
+  
+  .card_container {
+    width: 75%;
+    border-radius: 20px 0 0 20px;
+    border: solid 2px #51a8b1;
+  
+  }
+  
+  .btn_container {
+    width: 25%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #51a8b1;
+    border-radius: 0 20px 20px 0;
+    color: #ffffff;
+  }
+  
+  .my-custom-searchbar .searchbar-input-container .searchbar-input {
+    height: 150px !important;
+  }
+  
+  .my-custom-searchbar .searchbar-input-container .searchbar-input {
+    color: red;
+  }
+  
+  .search_container {
+    width: 85%;
+    height: auto;
+  
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    border: solid 2px #51a8b1;
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 30px;
+  
+  }
+}

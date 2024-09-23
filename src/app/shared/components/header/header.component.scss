@@ -1,6 +1,12 @@
 .home_logo {
+  width: 120px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media(min-height:1919px){
+  .home_logo {
   width: 180px;
   height: 140px;
-  margin-left: 35%;
-  margin-right: auto;
+  }
 }
