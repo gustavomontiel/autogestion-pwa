@@ -43,7 +43,6 @@ export class ComprobantesDeudaPage implements OnInit {
     this.flujoPagosService.getFacturasPendientes(nroDocumento, this.nroConexion).subscribe({
       next: facturas => {
         this.facturasPendientes = facturas;
-        console.log(this.facturasPendientes);
 
         this.facturasPendientes.forEach(
           (factura: any) => {
@@ -61,7 +60,6 @@ export class ComprobantesDeudaPage implements OnInit {
             }
           }
         )
-        console.log(this.facturasProcesadas);
 
       },
       error: error => {
@@ -70,16 +68,13 @@ export class ComprobantesDeudaPage implements OnInit {
     });
   }
 
-  toggle(item: any) {
-    this.showPagar = false;
-    this.showSiguiente = true;
-
-
+  toggle(item: any) {    
     if (this.pendAPagar.indexOf(item) == -1) {
       this.pendAPagar.push(item);
     } else {
       this.pendAPagar.splice(this.pendAPagar.indexOf(item), 1);
     }
+
     this.calcularTotalAPagar();
   }
 
@@ -89,7 +84,6 @@ export class ComprobantesDeudaPage implements OnInit {
     this.pendAPagar.forEach((factura: any) => {
       importeTotal = importeTotal + parseFloat(factura.Importe);
     });
-
 
     return importeTotal
 
@@ -106,31 +100,3 @@ export class ComprobantesDeudaPage implements OnInit {
   }
 
 }
-
-
-
-/*
-pagar() {
-  if (this.rehabilitacion) {
-    this.showPagar = true
-    this.siguiente = false
-    let montoTotal = 0;
-    this.pendAPagar.forEach((factura: any) => {
-      montoTotal += parseFloat(factura.Importe);
-    });
-  } else {
-    this.showPagar = true
-    this.siguiente = false
-    let montoTotal = 0;
-    this.pendAPagar.forEach((factura: any) => {
-      montoTotal += parseFloat(factura.Importe);
-    });
-  }
-
-}
-
-
-
-cambiarAceptacion() {
-  this.acepto = !this.acepto;
-} */

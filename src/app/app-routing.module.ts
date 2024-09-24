@@ -10,12 +10,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: RutasOpcionesFlujo.HOME,
+    redirectTo: `/${RutasOpcionesFlujo.HOME}`,
     pathMatch: 'full'
   },
   {
     path: '**',
-    redirectTo: RutasOpcionesFlujo.HOME,
+    redirectTo: `/${RutasOpcionesFlujo.HOME}`,
     pathMatch: 'full'
   }
 ];

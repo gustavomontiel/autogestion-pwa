@@ -1,6 +1,6 @@
 <ion-list lines="none">
     <ion-item>
-        <app-boton-volver slot="start"></app-boton-volver>
+        <app-boton-volver *ngIf="!hideGoBackButon" slot="start"></app-boton-volver>
         <div class="home_logo"><img src="/assets/imgs/logo.png"></div>
     </ion-item>
 </ion-list>

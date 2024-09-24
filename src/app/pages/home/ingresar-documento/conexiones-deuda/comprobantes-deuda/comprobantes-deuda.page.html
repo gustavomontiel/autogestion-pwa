@@ -1,9 +1,3 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>comprobantes-deuda</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
 <app-header></app-header>
 
 
@@ -19,7 +13,7 @@
   <div *ngIf="!esRehabilitacion">
     <ion-list>
       <ion-item *ngFor="let pendiente of facturasProcesadas">
-        <ion-checkbox (ionChange)="toggle(pendiente)"></ion-checkbox>
+        <ion-checkbox (ionChange)="toggle(pendiente)" [disabled]="showPagar"></ion-checkbox>
         <ion-label>
           <h4>{{pendiente.PeriodoDesc}}</h4>
         </ion-label>
@@ -51,7 +45,7 @@
   <div *ngIf="esRehabilitacion">
     <ion-list>
       <ion-item *ngFor="let pendiente of facturasProcesadas">
-        <ion-checkbox (ionChange)="toggle(pendiente)" [disabled]="pendiente.rehabilitacion" [checked]="pendiente.rehabilitacion">
+        <ion-checkbox (ionChange)="toggle(pendiente)" [disabled]="pendiente.rehabilitacion || showPagar" [checked]="pendiente.rehabilitacion">
         </ion-checkbox>
         <ion-label>
           <h5 [ngClass]="{ 'disabled-text': pendiente.rehabilitacion }">{{pendiente.PeriodoDesc}}</h5>
@@ -91,99 +85,4 @@
 
   </div>
 
-
-
-
 </ion-content>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <ion-content class="ion-padding">
-  <div class="home_logo"><img src="/assets/imgs/logo.png"></div>
-  <h4>Elija las facturas pendientes</h4>
-  <h5 >Para evitar cortes abone la factura más antigua primero</h5>
-
-
-  <ion-list *ngIf="!rehabilitacion">
-    <ion-item *ngFor="let pendiente of facturasPendietes">
-      <ion-checkbox (ionChange)="toggle(pendiente)"></ion-checkbox>
-      <ion-label ><h4>{{pendiente.PeriodoDesc}}</h4></ion-label>
-      <ion-label><h5>Vencimiento:<br> {{pendiente.PrimerVto}}</h5></ion-label>
-        <ion-label slot="end"><h2>$ {{pendiente.Importe | number}}</h2></ion-label>
-    </ion-item>
-  </ion-list>
-
-  <ion-list *ngIf="rehabilitacion">
-    <ion-item *ngFor="let pendiente of facturasPendietes">
-      <ion-checkbox (ionChange)="toggle(pendiente)" [disabled]="pendiente.corte != '0' " [checked]="pendiente.corte != '0'">
-      </ion-checkbox>
-      <ion-label>
-        <h4 [ngClass]="{ 'disabled-text': pendiente.corte != '0' }">{{pendiente.PeriodoDesc}}</h4>
-      </ion-label>
-      <ion-label>
-        <h5 [ngClass]="{ 'disabled-text': pendiente.corte != '0' }">Vencimiento:<br> {{pendiente.PrimerVto}}</h5>
-      </ion-label>
-      <ion-label slot="end">
-        <h2 [ngClass]="{ 'disabled-text': pendiente.corte != '0' }">$ {{pendiente.Importe | number}}</h2>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-
-  <ion-list *ngIf="rehabilitacion">
-    <ion-item>
-      <ion-toggle (ionChange)="cambiarAceptacion()" id="ionToggle" color="primary" style="margin-right: 3px; margin-left: -15px;"></ion-toggle>
-      <ion-label>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <ion-label>
-            <h5 style="font-size: 4.2vw;">Autorizo se debiten <b>${{arancel | number}}</b> por <b>cargo de rehabilitación</b>, en la próxima factura.</h5>
-          </ion-label>
-        </div>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-
-  <br>
-  <div style="width: 100%;display: flex; justify-content:space-around">
-    <div style="width:  50%;text-align: left;"><b>Total a Pagar:</b></div>
-    <div style="width:  50%;text-align: right;"><b>$ {{ calcularTotalAPagar() | number }}</b></div>
-  </div>
-  <br>
-
-  <div *ngIf="!rehabilitacion">
-    <ion-button *ngIf="siguiente"  expand="full" color="tertiary" (click)="pagar()" [disabled]="pendAPagar.length < 1 ">
-      Siguiente
-    </ion-button>
-
-
-    <app-generar-qr-de-pago *ngIf="showPagar"  [pendAPagar]="pendAPagar" [tipo]="'PEND'"></app-generar-qr-de-pago>
-
-  </div>
-
-  <div *ngIf="rehabilitacion">
-    <ion-button *ngIf="!siguiente" expand="full" color="tertiary" (click)="pagar()" [disabled]="pendAPagar.length < 1 && !acepto && siguiente">
-      Siguiente
-    </ion-button>
-
-    <app-generar-qr-de-pago *ngIf="siguiente" [pendAPagar]="pendAPagar" [tipo]="'PEND'" [arancel]="this.arancel" [nroConexion]="nroConexion"></app-generar-qr-de-pago>
-  </div>
-
-</ion-content> -->
