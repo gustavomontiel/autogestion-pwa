@@ -1,10 +1,23 @@
-h3{
+h3 {
     font-size: 20px;
 }
 
-.btn_volver{
-    width:auto; 
+.btn_volver {
+    width: auto;
     height: 40px;
-    margin-left:2%; 
+    margin-left: 2%;
     margin-bottom: 10px;
+}
+
+@media( min-height:1919px) {
+    h3 {
+        font-size: 40px;
+    }
+
+    .btn_volver {
+        height: 80px;
+    }
+    ion-icon{
+        zoom: 3.0;
+    }
 }

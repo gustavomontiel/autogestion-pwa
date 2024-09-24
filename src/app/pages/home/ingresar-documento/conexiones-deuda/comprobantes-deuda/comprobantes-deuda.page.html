@@ -1,13 +1,12 @@
 <app-header></app-header>
-
-
 <ion-content class="ion-padding">
-  <h3>Elija las facturas pendientes</h3>
+<div class="tittle">
+  <h4>Elija las facturas pendientes</h4>
   <h4 style="margin-bottom: 60px;">Para evitar cortes abone la factura más antigua primero</h4>
-
+  </div>
   <div class="conexion_titulo">
     <h1>Conexión Nº: <b>{{conexion.NroConexion}}</b></h1>
-    <h1>Direccion:  <b>{{conexion.Direccion}}</b></h1>
+    <h1>Direccion: <b>{{conexion.Direccion}}</b></h1>
   </div>
 
   <div *ngIf="!esRehabilitacion">
@@ -27,8 +26,12 @@
 
       <br>
       <div style="width: 100%;display: flex; justify-content:space-around;margin-top: 40px;">
-        <div style="width:  50%;text-align: left;"><h5 style="font-size: 45px;"><b>Total a Pagar:</b></h5></div>
-        <div style="width:  50%;text-align: right;"><h5 style="font-size: 45px;"><b>$ {{ calcularTotalAPagar() | number }}</b></h5></div>
+        <div style="width:  50%;text-align: left;">
+          <h5><b>Total a Pagar:</b></h5>
+        </div>
+        <div style="width:  50%;text-align: right;">
+          <h5><b>$ {{ calcularTotalAPagar() | number }}</b></h5>
+        </div>
       </div>
       <br>
 
@@ -48,23 +51,25 @@
         <ion-checkbox (ionChange)="toggle(pendiente)" [disabled]="pendiente.rehabilitacion || showPagar" [checked]="pendiente.rehabilitacion">
         </ion-checkbox>
         <ion-label>
-          <h5 [ngClass]="{ 'disabled-text': pendiente.rehabilitacion }">{{pendiente.PeriodoDesc}}</h5>
+          <h4 [ngClass]="{ 'disabled-text': pendiente.rehabilitacion }">{{pendiente.PeriodoDesc}}</h4>
         </ion-label>
         <ion-label>
-          <h5 [ngClass]="{ 'disabled-text': pendiente.rehabilitacion }">Vencimiento:<br> {{pendiente.PrimerVto}}</h5>
+          <h2 [ngClass]="{ 'disabled-text': pendiente.rehabilitacion }">Vencimiento:<br> {{pendiente.PrimerVto}}</h2>
         </ion-label>
         <ion-label slot="end">
-          <h5 [ngClass]="{ 'disabled-text': pendiente.rehabilitacion }">$ {{pendiente.Importe | number}}</h5>
+          <h4 [ngClass]="{ 'disabled-text': pendiente.rehabilitacion }">$ {{pendiente.Importe | number}}</h4>
         </ion-label>
       </ion-item>
     </ion-list>
     <ion-list>
       <ion-item>
-        <ion-toggle  (ionChange)="cambiarAceptacion()" id="ionToggle" color="primary" style="margin-right: 3px; margin-left: -15px; zoom: 4.0;"></ion-toggle>
+        <ion-toggle (ionChange)="cambiarAceptacion()" id="ionToggle" color="primary"
+          style="margin-right: 3px; margin-left: -15px; zoom: 4.0;"></ion-toggle>
         <ion-label>
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <ion-label>
-              <h3 style="font-size: 4.2vw;">Autorizo se debiten <b>${{arancel }}</b> por <b>cargo de rehabilitación</b>, en la próxima factura.</h3>
+              <h3 style="font-size: 4.2vw;">Autorizo se debiten <b>${{arancel }}</b> por <b>cargo de rehabilitación</b>,
+                en la próxima factura.</h3>
             </ion-label>
           </div>
         </ion-label>
@@ -72,16 +77,22 @@
     </ion-list>
     <br>
     <div style="width: 100%;display: flex; justify-content:space-around;margin-bottom: 180px;">
-      <div style="width:  50%;text-align: left;"><h1 style="font-size: 40px;"><b>Total a Pagar:</b></h1></div>
-      <div style="width:  50%;text-align: right;"><h1 style="font-size: 40px;"><b>$ {{ calcularTotalAPagar() | number  }}</b></h1></div>
+      <div style="width:  50%;text-align: left;">
+        <h5><b>Total a Pagar:</b></h5>
+      </div>
+      <div style="width:  50%;text-align: right;">
+        <h5><b>$ {{ calcularTotalAPagar() | number }}</b></h5>
+      </div>
     </div>
     <br>
 
-    <ion-button class="btn_pagar" shape="round" *ngIf="showSiguiente"  color="tertiary" (click)="pagar()" [disabled]="!aceptarRecargo">
+    <ion-button class="btn_pagar" shape="round" *ngIf="showSiguiente" color="tertiary" (click)="pagar()"
+      [disabled]="!aceptarRecargo">
       <h3>Siguiente</h3>
     </ion-button>
 
-    <app-generar-qr-de-pago *ngIf="showPagar" [pendAPagar]="pendAPagar" [tipo]="'REHA'" [arancel]="this.arancel" [nroConexion]="nroConexion"></app-generar-qr-de-pago>
+    <app-generar-qr-de-pago *ngIf="showPagar" [pendAPagar]="pendAPagar" [tipo]="'REHA'" [arancel]="this.arancel"
+      [nroConexion]="nroConexion"></app-generar-qr-de-pago>
 
   </div>
 

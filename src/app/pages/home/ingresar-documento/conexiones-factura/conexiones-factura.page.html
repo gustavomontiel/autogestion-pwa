@@ -1,12 +1,12 @@
 <app-header></app-header>
-
+<ion-content class="ion-padding">
 <div class="searchStyle">
   <h4>Seleccione la conexión deseada:</h4>
   <ion-searchbar placeholder="Buscar Conexión" type="number" slot="fixed" 
     (ionInput)="buscador($event.detail.value)"></ion-searchbar>
 
 </div>
-<ion-content class="ion-padding">
+
 
 
   <div class="factura_container" *ngFor="let conexion of conexionesFiltradas">

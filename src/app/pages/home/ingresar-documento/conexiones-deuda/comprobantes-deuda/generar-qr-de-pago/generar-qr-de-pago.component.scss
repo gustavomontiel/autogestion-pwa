@@ -1,11 +1,26 @@
 .btn_pagar {
-    width: 60%;
-    height: 80px;
-    margin-left:20%;
+    width: 40%;
+    height: 40px;
+    margin-left:30%;
     margin-right: auto;
-    margin-top: 120px;
+    margin-top: 80px;
   }
 
   h3{
-    font-size: 40px;
+    font-size: 20px;
+  }
+  @media(min-height:1919px){
+    .btn_pagar {
+      width: 60%;
+      height: 80px;
+      margin-left:20%;
+      margin-right: auto;
+      margin-top: 120px;
+    }
+  
+    h3{
+      font-size: 40px;
+    }
+  
+
   }
