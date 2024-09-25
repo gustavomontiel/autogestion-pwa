@@ -34,10 +34,11 @@
 
   <div *ngIf="direccionIncorrecta">
     <h1><b>Ubique en el Mapa su Domicilio</b></h1>
-    <h2 style="text-align: center;">Arrastre el pin <ion-icon name="location" color="secondary"></ion-icon> de ubicación
+    <h2 class="tittle">Arrastre el pin <ion-icon name="location" color="secondary"></ion-icon> de ubicación
       en el mapa, hasta su domicilio y confírmelo</h2>
-    <capacitor-google-map #map></capacitor-google-map>
-
+    <div class="map">
+      <capacitor-google-map #map></capacitor-google-map>
+    </div>
 
     <ion-button class="btn_enviaReclamo" shape="round" color="tertiary" (click)="enviarReclamo()" id="enviar">
       Generar Reclamo

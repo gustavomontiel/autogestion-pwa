@@ -87,7 +87,7 @@ export class GenerarReclamoPage implements OnInit {
           lat: -27.371584367487223,
           lng: -55.9178352355957,
         },
-        zoom: 12,
+        zoom: 13,
       },
 
     })

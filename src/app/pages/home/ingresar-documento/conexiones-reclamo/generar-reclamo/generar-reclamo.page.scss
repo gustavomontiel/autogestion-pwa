@@ -1,7 +1,26 @@
 capacitor-google-map {
   display: inline-block;
-  width: 275px;
-  height: 400px;
+  width: 60%;
+  height: 340px;
+  margin-left: 20%;
+
+
+}
+
+.map {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: auto;
+  padding: 10px;
+
+}
+
+.tittle {
+  display: none;
 }
 
 h1 {
@@ -42,10 +61,10 @@ h4 {
 }
 
 .btn_enviaReclamo {
-  width: 80%;
-  height: 80px;
-  margin-left: 10%;
-  font-size: 40px;
+  width: 60%;
+  height: 40px;
+  margin-left: 20%;
+  font-size: 20px;
 }
 
 ion-card {
@@ -134,20 +153,20 @@ ion-card {
     margin: 20px;
     width: 100%;
     justify-content: center;
-    padding-left:0%;
+    padding-left: 0%;
     margin-top: 120px;
   }
 
-  h1{
+  h1 {
     font-size: 60px;
     margin-top: 120px;
   }
 
-  h2{
+  h2 {
     font-size: 52px;
   }
 
-  ion-card{
+  ion-card {
     padding: 32px;
   }
 
@@ -157,6 +176,28 @@ ion-card {
     margin: 10px;
     font-size: 40px;
     margin-top: 120px;
-  
+
+  }
+
+  capacitor-google-map {
+    display: inline-block;
+    width: 80%;
+    height: 864px;
+    margin-left: 10%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .btn_enviaReclamo {
+    width: 80%;
+    height: 80px;
+    margin-left: 10%;
+    font-size: 40px;
+    margin-top: 60px;
+  }
+
+  .tittle {
+    display: block;
   }
 }
+
