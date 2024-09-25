@@ -5,6 +5,10 @@ h1{
 
 ion-button{
    width: 60%;
+   height: 80px;
+   margin-left: 20%;
+   display: flex;
+   align-items: center;
 }
 
 @media(min-height:1919px){
