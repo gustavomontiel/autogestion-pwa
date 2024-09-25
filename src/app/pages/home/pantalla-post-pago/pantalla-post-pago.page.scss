@@ -6,3 +6,7 @@ h1{
 ion-button{
    width: 60%;
 }
+
+@media(min-height:1919px){
+    h1{font-size: 40px;}
+}
