@@ -124,8 +124,8 @@ export class GenerarReclamoPage implements OnInit {
         if (!this.reclamoAbierto) {
           let reclamoData = {
             origen: 33,
-            documento: this.perfil.Documento,
-            nroCx: this.perfil.NroConexion,
+            nroDocumento: this.perfil.Documento,
+            nroConexion: this.perfil.NroConexion,
             idAsunto: this.asuntoSeleccionado,
             direccion: this.perfil.Direccion,
             observacionDomicilio: this.direccionIncorrecta ? 'Direccion indicada por el usuario: ' + this.direccionCorrecta : 'Direccion confirmada por usuario',
@@ -134,8 +134,7 @@ export class GenerarReclamoPage implements OnInit {
           this.reclamosService.saveReclamo(reclamoData).subscribe({
             next: (data) => {
               this.respuesta = data;
-              this.presentAlert(this.respuesta.respuesta.subtitulo);
-              /* this.router.navigate(['/tabs/home/'], { replaceUrl: true }); */
+              this.presentAlert(this.respuesta.respuesta);
             },
             error: (error) => {
               console.log(error);
@@ -168,13 +167,7 @@ export class GenerarReclamoPage implements OnInit {
           ' y tiene el número: <b>' +
           reclamo.idSolicitud +
           '</b>. <hr>Si desea reiterar el reclamo por favor complete el campo Detalle.',
-        /* inputs: [
-          {
-            name: 'detalle',
-            placeholder: 'Detalle',
-            type: 'textarea',
-          },
-        ], */
+
         buttons: [
           {
             text: 'Cancelar',
@@ -205,8 +198,7 @@ export class GenerarReclamoPage implements OnInit {
 
   async presentAlert(message: any) {
     const alert = await this.alertController.create({
-      header: 'Reclamo generado correctamente',
-      message: message,
+      header: message,
       mode: 'ios',
       buttons: [
         {
