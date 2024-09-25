@@ -53,10 +53,6 @@ h1 {
   margin-top: 80px;
 }
 
-.style_checkbox {
-  width: 360px;
-  height: 60px;
-}
 
 .conexion_titulo {
   width: auto;
@@ -74,10 +70,6 @@ h1 {
     display:block;}
     .color {
       color: white;
-    }
-    
-    ion-checkbox {
-      margin-right: 5px;
     }
     
     .disabled-text {
@@ -136,5 +128,14 @@ h1 {
       height: auto;
       margin-left: 4%;
       margin-bottom: 40px;
+    }
+
+    .check{
+      width: 160px;
+      height: 160px;
+    }
+
+    ion-checkbox{
+      zoom: 3.0;
     }
 }

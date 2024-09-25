@@ -6,13 +6,13 @@
   </div>
   <div class="conexion_titulo">
     <h1>Conexión Nº: <b>{{conexion.NroConexion}}</b></h1>
-    <h1>Direccion: <b>{{conexion.Direccion}}</b></h1>
+    <h1>Dirección: <b>{{conexion.Direccion}}</b></h1>
   </div>
 
   <div *ngIf="!esRehabilitacion">
     <ion-list>
       <ion-item *ngFor="let pendiente of facturasProcesadas">
-        <ion-checkbox (ionChange)="toggle(pendiente)"></ion-checkbox>
+        <ion-checkbox class="check" (ionChange)="toggle(pendiente)"></ion-checkbox>
         <ion-label>
           <h4>{{pendiente.PeriodoDesc}}</h4>
         </ion-label>
@@ -48,7 +48,7 @@
   <div *ngIf="esRehabilitacion">
     <ion-list>
       <ion-item *ngFor="let pendiente of facturasProcesadas">
-        <ion-checkbox (ionChange)="toggle(pendiente)" [disabled]="pendiente.rehabilitacion" [checked]="pendiente.rehabilitacion">
+        <ion-checkbox class="check" (ionChange)="toggle(pendiente)" [disabled]="pendiente.rehabilitacion" [checked]="pendiente.rehabilitacion">
         </ion-checkbox>
         <ion-label>
           <h4 [ngClass]="{ 'disabled-text': pendiente.rehabilitacion }">{{pendiente.PeriodoDesc}}</h4>

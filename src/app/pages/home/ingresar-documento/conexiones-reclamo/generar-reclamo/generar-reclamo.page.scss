@@ -3,51 +3,63 @@ capacitor-google-map {
   width: 275px;
   height: 400px;
 }
-h1{
+
+h1 {
   text-align: center;
-  font-size: 60px;
+  font-size: 24px;
   color: #606062;
 }
 
-h2{
-  font-size: 52px;
+h2 {
+  font-size: 20px;
   color: #606062;
+  text-align: center;
 }
 
-h3{
+h3 {
   font-size: 28px;
   color: #606062;
 }
-h4{
-  font-size: 40px;
+
+h4 {
+  font-size: 14px;
   color: #ffffff;
+  text-align: center;
 }
 
-.btn_container{
+.btn_container {
   display: flex;
   justify-content: center;
   margin-top: 60px;
-  background-color:#f58634 ;
-  box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.37);
+  background-color: #f58634;
+  box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.37);
 }
-.btn_reclamo{
-  margin-top: 80px;
+
+.btn_reclamo {
+  margin-top: 10px;
+  display: inline-block;
+
 }
-.btn_enviaReclamo{
+
+.btn_enviaReclamo {
   width: 80%;
   height: 80px;
   margin-left: 10%;
   font-size: 40px;
 }
 
-ion-card{
-  border: solid 2px #f58634;
-  padding:32px;
-  margin: 90px;
-  border-radius: 12px;
-  box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.37);
+ion-card {
+  border: solid 2px #606062;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.37);
+  width: 60%;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
-.search_container{
+
+.search_container {
   width: 70%;
   min-height: 60px;
   height: auto;
@@ -60,16 +72,91 @@ ion-card{
   margin-bottom: 20px;
 }
 
-.btn_cont{
+.btn_cont {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
-.btn_domicilio{
-  width: 40%;
-  height: 80px;
+.btn_domicilio {
+  width: 30%;
+  height: 40px;
   margin: 10px;
-  font-size: 40px;
+  font-size: 20px;
 
+}
+
+.asunto_container {
+  display: inline-block;
+  margin: 20px;
+  width: 100%;
+  justify-content: center;
+  padding-left: 10%;
+}
+
+.container {
+  display: inline-block;
+  margin: 5px;
+  width: 20%;
+  height: 120px;
+  margin-top: 1px;
+  border-radius: 20px;
+  box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.37);
+  background-color: #51a8b1;
+  align-content: center;
+
+}
+
+.container:hover {
+  background-color: #0e626b;
+}
+
+@media(min-height:1919px) {
+  h4 {
+    font-size: 40px;
+  }
+
+  .container {
+    display: inline-block;
+    margin: 25px;
+    width: 90%;
+    height: 220px;
+    margin-top: 1px;
+    border-radius: 20px;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.37);
+    background-color: #51a8b1;
+    align-content: center;
+
+  }
+
+  .asunto_container {
+    display: inline-block;
+    margin: 20px;
+    width: 100%;
+    justify-content: center;
+    padding-left:0%;
+    margin-top: 120px;
+  }
+
+  h1{
+    font-size: 60px;
+    margin-top: 120px;
+  }
+
+  h2{
+    font-size: 52px;
+  }
+
+  ion-card{
+    padding: 32px;
+  }
+
+  .btn_domicilio {
+    width: 40%;
+    height: 80px;
+    margin: 10px;
+    font-size: 40px;
+    margin-top: 120px;
+  
+  }
 }
