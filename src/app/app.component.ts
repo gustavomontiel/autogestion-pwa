@@ -1,4 +1,5 @@
-import { Component, HostListener/* , OnInit */ } from '@angular/core';
+import { Component, HostListener,/* , OnInit */ 
+OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import {
@@ -7,13 +8,14 @@ import {
 } from 'src/app/shared/const/rutas-opciones-flujo.const';
 import { AutoCerrarService } from './shared/services/auto-cerrar.service';
 import { LoadingService } from './shared/services/loading.service';
+import { LocalidadesService } from './shared/services/localidades.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
-export class AppComponent /* implements OnInit */ {
+export class AppComponent implements OnInit {
   lastTouchTime: string;
   inactivityTimeout: any;
   mostrandoAlert: boolean = false
@@ -24,7 +26,8 @@ export class AppComponent /* implements OnInit */ {
     private alertController: AlertController,
     private router: Router,
     private route: ActivatedRoute,
-    private timers: AutoCerrarService
+    private timers: AutoCerrarService,
+    private localidadesService: LocalidadesService
     ) {
     this.milisegundosHastaAlerta = 30000;
     this.milisegundosHastaHome = 15000;
@@ -32,10 +35,11 @@ export class AppComponent /* implements OnInit */ {
     this.iniciarContadorInactividad();
   }
 
-  /* ngOnInit() {
-    this.getTimers()
+  ngOnInit() {
+    this.localidadesService.getLocalidades().subscribe();
+    // this.getTimers()
   }
- */
+ 
 
 
 
