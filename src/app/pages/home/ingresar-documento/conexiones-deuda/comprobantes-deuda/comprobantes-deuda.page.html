@@ -13,12 +13,18 @@
     <ion-list>
       <ion-item *ngFor="let pendiente of facturasProcesadas">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <ion-checkbox (ionChange)="toggle(pendiente)" [disabled]="showPagar"></ion-checkbox>
 =======
        
           <ion-checkbox  (ionChange)="toggle(pendiente)"></ion-checkbox>
   
 >>>>>>> bbd049a (media query)
+=======
+       
+          <ion-checkbox  (ionChange)="toggle(pendiente)"></ion-checkbox>
+  
+>>>>>>> bbd049a9460c89b48e4744c9b51bbb36f42ef27f
         <ion-label>
           <h4>{{pendiente.PeriodoDesc}}</h4>
         </ion-label>
@@ -55,11 +61,16 @@
     <ion-list>
       <ion-item *ngFor="let pendiente of facturasProcesadas">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <ion-checkbox (ionChange)="toggle(pendiente)" [disabled]="pendiente.rehabilitacion || showPagar" [checked]="pendiente.rehabilitacion">
 =======
         <ion-checkbox (ionChange)="toggle(pendiente)" [disabled]="pendiente.rehabilitacion"
           [checked]="pendiente.rehabilitacion">
 >>>>>>> bbd049a (media query)
+=======
+        <ion-checkbox (ionChange)="toggle(pendiente)" [disabled]="pendiente.rehabilitacion"
+          [checked]="pendiente.rehabilitacion">
+>>>>>>> bbd049a9460c89b48e4744c9b51bbb36f42ef27f
         </ion-checkbox>
         <ion-label>
           <h4 [ngClass]="{ 'disabled-text': pendiente.rehabilitacion }">{{pendiente.PeriodoDesc}}</h4>
@@ -107,9 +118,12 @@
 
   </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 </ion-content>
 =======
+=======
+>>>>>>> bbd049a9460c89b48e4744c9b51bbb36f42ef27f
 </ion-content>
 
 
@@ -202,5 +216,9 @@
     <app-generar-qr-de-pago *ngIf="siguiente" [pendAPagar]="pendAPagar" [tipo]="'PEND'" [arancel]="this.arancel" [nroConexion]="nroConexion"></app-generar-qr-de-pago>
   </div>
 
+<<<<<<< HEAD
 </ion-content> -->
 >>>>>>> bbd049a (media query)
+=======
+</ion-content> -->
+>>>>>>> bbd049a9460c89b48e4744c9b51bbb36f42ef27f
