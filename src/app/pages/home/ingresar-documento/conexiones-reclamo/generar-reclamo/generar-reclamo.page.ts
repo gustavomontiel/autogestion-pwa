@@ -117,84 +117,29 @@ export class GenerarReclamoPage implements OnInit {
 
   enviarReclamo() {
 
-    this.reclamosService.getReclamosAbiertos(+this.perfil.NroConexion, +this.asuntoSeleccionado).subscribe(
-      (data) => {
-        this.reclamoAbierto = data;
+    if (!this.reclamoAbierto) {
+      let reclamoData = {
+        origen: 33,
+        nroDocumento: this.perfil.Documento,
+        nroConexion: this.perfil.NroConexion,
+        idAsunto: this.asuntoSeleccionado,
+        direccion: this.perfil.Direccion,
+        observacionDomicilio: this.direccionIncorrecta ? 'Direccion indicada por el usuario: ' + this.direccionCorrecta : 'Direccion confirmada por usuario',
+      };
 
-        if (!this.reclamoAbierto) {
-          let reclamoData = {
-            origen: 33,
-            nroDocumento: this.perfil.Documento,
-            nroConexion: this.perfil.NroConexion,
-            idAsunto: this.asuntoSeleccionado,
-            direccion: this.perfil.Direccion,
-            observacionDomicilio: this.direccionIncorrecta ? 'Direccion indicada por el usuario: ' + this.direccionCorrecta : 'Direccion confirmada por usuario',
-          };
-
-          this.reclamosService.saveReclamo(reclamoData).subscribe({
-            next: (data) => {
-              this.respuesta = data;
-              this.presentAlert(this.respuesta.respuesta);
-            },
-            error: (error) => {
-              console.log(error);
-            },
-          });
-        } else {
-          if (this.reclamoAbierto.permiteReiteracion) {
-            this.reiterarReclamo(this.reclamoAbierto);
-          } else {
-            this.alertService.present(
-              'Usted ya generado un reclamo recientemente. Para reiterarlo, vuelva a intentarlo otra vez despues de un tiempo.',
-              'Atención!',
-            );
-          }
-          this.isLoading = false;
-        }
+      this.reclamosService.saveReclamo(reclamoData).subscribe({
+        next: (data) => {
+          this.respuesta = data;
+          this.presentAlert(this.respuesta.respuesta);
+        },
+        error: (error) => {
+          console.log(error);
+        },
       });
+
+
+    }
   }
-
-
-  async reiterarReclamo(reclamo: any) {
-    let alert = (
-      await this.alertController.create({
-        header: 'Reiteración de reclamo',
-        message:
-          'Ya existe un reclamo generado para la conexión ' +
-          reclamo.nroCx +
-          '. El mismo fue generado el ' +
-          reclamo.FechaADD +
-          ' y tiene el número: <b>' +
-          reclamo.idSolicitud +
-          '</b>. <hr>Si desea reiterar el reclamo por favor complete el campo Detalle.',
-
-        buttons: [
-          {
-            text: 'Cancelar',
-            role: 'cancel',
-            handler: (data) => {
-              console.log('Solicitud cancelada.');
-            },
-          },
-          {
-            text: 'Reiterar',
-            handler: (data) => {
-              let reiteracionData = {
-                idSolicitud: reclamo.idSolicitud,
-                detalle: 'Reclamo reiterado desde Totem',
-              };
-              this.reclamosService.repeatReclamo(reiteracionData).subscribe(
-                (data) => {
-                  const respuesta: any = data;
-                  this.alertService.present(respuesta.respuesta, 'Resultado');
-                });
-            },
-          },
-        ],
-      })
-    ).present();
-  }
-
 
   async presentAlert(message: any) {
     const alert = await this.alertController.create({

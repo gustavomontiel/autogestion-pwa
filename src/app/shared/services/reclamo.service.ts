@@ -18,19 +18,8 @@ export class ReclamoService {
     return this.http.get(url,);
   }
 
-  getReclamosAbiertos(nroConexion: number, motivo: number) {
-    const url = environment.publicApiRestUrl + 'reclamosAbiertos/' + nroConexion + '/' + motivo;
-    return this.http.get(url,);
-  }
-
   saveReclamo(reclamo: any) {
     const url = environment.publicApiRestUrl + 'reclamos';
     return this.http.post(url, reclamo);
   }
-
-  repeatReclamo(reiteracion: any) {
-    const url = environment.publicApiRestUrl + 'reiteracionReclamo';
-    return this.http.post(url, reiteracion);
-  }
-
 }
