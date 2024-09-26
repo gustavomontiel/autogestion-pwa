@@ -1,6 +1,7 @@
 <app-header></app-header>
 <ion-content class="ion-padding">
   <div class="asunto_container" *ngIf="!asuntoSeleccionado">
+    <h5>Elija el motivo para la asistencia</h5>
 
 
     <div class="container" *ngFor="let asunto of asuntos" (click)="seleccionadorDeAsunto(asunto.idAsunto)">
