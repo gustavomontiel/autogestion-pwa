@@ -5,21 +5,21 @@ import { LoadingController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class LoadingService {
-  loading!: HTMLIonLoadingElement;
+  loading: HTMLIonLoadingElement | undefined;
   peticiones = 0;
 
-  constructor(public loadingController: LoadingController) {}
 
-  async init() {
-    this.loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
-      mode: 'ios'
-    });
+  constructor(public loadingController: LoadingController) {
+    
   }
 
   async present(msg = 'Procesando...') {
     this.peticiones++;
+    
     if (this.peticiones === 1) {
+      if ( !this.loading ) {
+        this.loading = await this.loadingController.create();
+      }
       this.loading.message = msg;
       this.loading.present();
     }
@@ -27,8 +27,12 @@ export class LoadingService {
 
   dismiss() {
     this.peticiones--;
+    let esperarMs = this.loading ? 0 : 500;
     if (this.peticiones === 0) {
-      this.loading.dismiss();
+      setTimeout(() => {
+        this.loading?.dismiss();
+        this.loading = undefined; 
+      }, esperarMs);
     }
   }
 }

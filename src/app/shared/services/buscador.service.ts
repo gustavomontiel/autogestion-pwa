@@ -10,13 +10,11 @@ export class BuscadorService {
 
   buscarConexion(query: string, array: IntConexionesDeuda[]): any {
     if (query != '' && query != null) {
-      console.log(query);
       let arrayFiltrado = array.filter(
         (resultado: any) => {
           return resultado.NroConexion.includes(query)
         }
       )
-      console.log(arrayFiltrado);
 
       return arrayFiltrado
     } else {
@@ -39,8 +37,5 @@ export class BuscadorService {
       return array
     }
   }
-
-
-
 
 }

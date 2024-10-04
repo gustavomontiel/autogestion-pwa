@@ -14,10 +14,8 @@
               Conexión Nº: <b>{{ conexion.NroConexion }}</b>
             </h2>
             <h3>{{ conexion.Direccion }}</h3>
-            <ion-badge item-end *ngIf="+conexion.activo === 0">{{
-              conexion.estadoConexion
-              }}</ion-badge>
-            <h2 class="fact-pendientes" *ngIf="+conexion.IdCategoria !== 8"></h2>
+            <br>
+
           </ion-label>
         </ion-item>
       </ion-card>

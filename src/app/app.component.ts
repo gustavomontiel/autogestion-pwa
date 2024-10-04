@@ -1,13 +1,12 @@
-import { Component, HostListener,/* , OnInit */ 
-OnInit} from '@angular/core';
+import {
+  Component, HostListener,/* , OnInit */
+  OnInit
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import {
-  OpcionesFlujos,
   RutasOpcionesFlujo as rutas
 } from 'src/app/shared/const/rutas-opciones-flujo.const';
-import { AutoCerrarService } from './shared/services/auto-cerrar.service';
-import { LoadingService } from './shared/services/loading.service';
 import { LocalidadesService } from './shared/services/localidades.service';
 
 @Component({
@@ -26,9 +25,8 @@ export class AppComponent implements OnInit {
     private alertController: AlertController,
     private router: Router,
     private route: ActivatedRoute,
-    private timers: AutoCerrarService,
     private localidadesService: LocalidadesService
-    ) {
+  ) {
     this.milisegundosHastaAlerta = 30000;
     this.milisegundosHastaHome = 15000;
     this.lastTouchTime = 'Nunca';
@@ -37,21 +35,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.localidadesService.getLocalidades().subscribe();
-    // this.getTimers()
+    this.router.navigate([rutas.HOME]);
   }
- 
-
-
-
-  /* getTimers() {
-    this.timers.getTimers().subscribe(
-      (data: any) => {
-        this.milisegundosHastaAlerta = +data.MilisegundosHastaAlerta
-        this.milisegundosHastaHome = +data.MilisegundosHastaHome
-        console.log(this.milisegundosHastaAlerta, this.milisegundosHastaHome);
-      }
-    )
-  } */
 
   @HostListener('document:touchstart', ['$event'])
   onTouchStart(event: TouchEvent) {
@@ -62,7 +47,6 @@ export class AppComponent implements OnInit {
     if (!this.mostrandoAlert) {
       this.reiniciarContadorInactividad();
     }
-
   }
 
   iniciarContadorInactividad() {
@@ -128,6 +112,4 @@ export class AppComponent implements OnInit {
     }, this.milisegundosHastaHome); // 15 segundos
 
   }
-
-
 }

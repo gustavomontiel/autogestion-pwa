@@ -21,7 +21,6 @@ export class  LocalidadesService {
     return this.http.get(url).pipe(
         tap( (localidades) => { 
           this.localidades = (localidades as any[]);
-          console.log(localidades);
         }) );
   }
 

@@ -5,7 +5,7 @@
 
 
     <div class="container" *ngFor="let asunto of asuntos" (click)="seleccionadorDeAsunto(asunto.idAsunto)">
-      <h4><b>{{asunto.Denominacion}}</b><br>
+      <h4><b>{{asunto.Denominacion | titlecase }}</b><br>
         {{asunto.Descripcion}}</h4>
     </div>
   </div>

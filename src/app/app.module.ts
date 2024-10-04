@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { registerLocaleData } from '@angular/common';
 import localeEsAr from '@angular/common/locales/es-AR';
-import { LoadingService } from './shared/services/loading.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
@@ -16,9 +15,9 @@ import { AppVersionInterceptor } from './shared/interceptors/app-version.interce
 import { ServiceWorkerModule } from '@angular/service-worker';
 registerLocaleData(localeEsAr, 'es-Ar');
 
-export function initialize(loadingService: LoadingService) {
+export function initialize() {
   return async () => {
-    await loadingService.init();
+    // TODO: Para procesos necesarios al iniciar la aplicación
   };
 }
 
@@ -42,7 +41,7 @@ export function initialize(loadingService: LoadingService) {
       provide: APP_INITIALIZER,
       useFactory: initialize,
       multi: true,
-      deps: [LoadingService]
+      deps: []
     },
     { provide: LOCALE_ID, useValue: 'es-AR' },
     {

@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { first } from 'rxjs';
 import {
   OpcionesFlujos,
   RutasOpcionesFlujo as rutas
 } from 'src/app/shared/const/rutas-opciones-flujo.const';
 import { IntConexionesDeuda } from 'src/app/shared/interfaces/conexiones-deuda.interface';
 import { AlertService } from 'src/app/shared/services/alert.service';
+import { ClientesService } from 'src/app/shared/services/clientes.service';
 import { FlujoPagosService } from 'src/app/shared/services/flujo-pagos.service';
 import { FlujoQrFacturaService } from 'src/app/shared/services/flujo-qr-factura.service';
 import { FlujoReclamosService } from 'src/app/shared/services/flujo-reclamos.service';
-import { LoadingService } from 'src/app/shared/services/loading.service';
 import { OpcionesSeleccionadasService } from 'src/app/shared/services/opciones-seleccionadas.service';
 import { nroDocumentoValidator } from 'src/app/shared/validators/nro-documento.validator';
 
@@ -32,7 +33,7 @@ export class IngresarDocumentoPage implements OnInit {
     private opciones: OpcionesSeleccionadasService,
     private router: Router,
     private route: ActivatedRoute,
-
+    private clientesService: ClientesService
   ) { }
 
   ngOnInit() {
@@ -54,7 +55,9 @@ export class IngresarDocumentoPage implements OnInit {
       return;
     }
 
-    this.opciones.setNroDocumento(this.form.get('documento')?.value);
+    const nroDocumento = this.form.get('documento')?.value;
+    this.opciones.setNroDocumento(nroDocumento);
+    this.clientesService.getClienteDeDocumento(nroDocumento).pipe(first()).subscribe();
 
     switch (this.opciones.getFlujoSeleccionada()) {
       case OpcionesFlujos.FLUJO_PAGOS:

@@ -14,7 +14,7 @@ export class FlujoReclamosService {
   getConexionesReclamos(
     nroDocumento: string
   ): Observable<IntConexionesDeuda[]> {
-    const url = `${environment.publicApiRestUrl}/conexiones/${nroDocumento}`;
+    const url = `${environment.publicApiRestUrl}/conexionesactivas/${nroDocumento}`;
     return this.http.get<IntConexionesDeuda[]>(url);
   }
 }

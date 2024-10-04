@@ -2,40 +2,32 @@
 
 <div class="searchStyle">
   <h4>Seleccione la conexión deseada:</h4>
-  <ion-searchbar placeholder="Buscar Conexión" type="number" slot="fixed" 
+  <ion-searchbar placeholder="Buscar Conexión" type="number" slot="fixed"
     (ionInput)="buscador($event.detail.value)"></ion-searchbar>
 </div>
 <ion-content class="ion-padding">
 
   <div class="factura_container" *ngFor="let conexion of conexionesFiltradas">
-<div class="card_container">
-    <ion-list class="list" style="background-color: transparent;">
-      <ion-card class="conexion_card" lines="none">
-        <ion-item lines="none" decoration="none">
-          <ion-label lines="none">
-            <h1>
-              Conexión Nº: <b>{{ conexion.NroConexion }}</b>
-            </h1>
+    <div class="card_container">
+      <ion-list class="list" style="background-color: transparent;">
+        <ion-card class="conexion_card" lines="none">
+          <ion-item lines="none" decoration="none">
+            <ion-label lines="none">
+              <h1>
+                Conexión Nº: <b>{{ conexion.NroConexion }}</b>
+              </h1>
 
-            <h5>{{ conexion.Direccion }}</h5>
-         
-            <ion-badge style="font-size: 30px;padding: 10px;" item-end *ngIf="+conexion.activo === 0">{{
-              conexion.estadoConexion
-              }}</ion-badge>
-            <h2 class="fact-pendientes" *ngIf="+conexion.IdCategoria !== 8"></h2>
-            <br />
+              <h5>{{ conexion.Direccion }}</h5>
+              <br />
+            </ion-label>
+          </ion-item>
+        </ion-card>
 
-
-
-          </ion-label>
-        </ion-item>
-      </ion-card>
-
-    </ion-list></div>
+      </ion-list>
+    </div>
     <div class="btn_container" (click)="SeleccionarConexion(conexion)">
       <h3 style="text-align: center;"><ion-icon name="qr-code-outline" style="zoom: 2.0;">
-      </ion-icon><br>Ver Facturas</h3>
+        </ion-icon><br>Ver Facturas</h3>
     </div>
   </div>
 </ion-content>
-<!-- *ngIf="+conexion.CantFact > 0 && +conexion.IdCategoria !== 8" -->
