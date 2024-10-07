@@ -41,7 +41,7 @@ export class GenerarQrDePagoComponent implements OnInit {
 
       (data: any) => {
         this.respuesta = data.respuesta;
-        const url = 'https://sistemas.energiademisiones.com.ar/comercial/plataformas-pagos/macro.html?'
+        const url = 'https://autogestion.energiademisiones.com.ar/plataformas-pagos/macro.html?'
           + 'callbackEncriptada=' + encodeURIComponent(data.respuesta.solicitudMacro.respuesta.callbackEncriptada) + '&'
           + 'cancelEncriptada=' + encodeURIComponent(data.respuesta.solicitudMacro.respuesta.cancelEncriptada) + '&'
           + 'comercio=' + encodeURIComponent(data.respuesta.solicitudMacro.respuesta.comercio) + '&'
